@@ -14,9 +14,11 @@ print(data.dtypes)
 data= data.dropna()
 
 #binary data loaded as float convert to int as it is n=binary data and integer type is more appropriate than float
+binary_columns = ['male','married']
+for col in binary_columns:
+    data[col] = data[col].astype(int)
+print("\nBinary columns converted to int.")
 
-data['male'] = data['male'].astype(int)
-print (data['male'])
 
 # data filtering,creating new variable,transformation
 
